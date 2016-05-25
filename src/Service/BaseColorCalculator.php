@@ -26,6 +26,11 @@ class BaseColorCalculator {
     private $cream;
     
     /**
+     * @var int
+     */
+    private $dun;
+    
+    /**
      * @var array
      */
     private $colors = [
@@ -38,6 +43,15 @@ class BaseColorCalculator {
         'smokyCream' => 7,
         'perlino' => 8,
         'cremello' => 9,
+        'grulla' => 10,
+        'classicDun' => 11,
+        'claybank' => 12,
+        'smokyGrulla' => 13,
+        'smokyCreamGrulla' => 14,
+        'dunskin' => 15,
+        'dunPerlino' => 16,
+        'dunalino' => 17,
+        'dunCremello' => 18
     ];
     
     /**
@@ -45,11 +59,12 @@ class BaseColorCalculator {
      * @param   int $extension
      * @param   int $cream
      */
-    public function __construct($agouti, $extension, $cream)
+    public function __construct($agouti, $extension, $cream, $dun)
     {
         $this->agouti = $agouti;
         $this->extension = $extension;
         $this->cream = $cream;
+        $this->dun = $dun;
     }
     
     /**
@@ -76,63 +91,141 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    public function calculateBlack()
+    private function calculateBlack()
     {
         // No cream
-        if ($this->cream == 0) {
+        if ($this->cream == 0 && $dun == 0) {
             return $this->colors['black'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1) {
+        if ($this->cream == 1 && $dun == 0) {
             return $this->colors['smokyBlack'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2) {
+        if ($this->cream == 2 && $dun == 0) {
             return $this->colors['smokyCream'];
+        }
+        
+        // With dun gen
+        if ($this->dun != 0) {
+            return $this->calculateBlackDun();
         }
     }
     
     /**
      * @return  int
      */
-    public function calculateBay()
+    private function calculateBay()
     {
         // No cream
-        if ($this->cream == 0) {
+        if ($this->cream == 0 && $dun == 0) {
             return $this->colors['bay'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1) {
+        if ($this->cream == 1 && $dun == 0) {
             return $this->colors['buckskin'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2) {
+        if ($this->cream == 2 && $dun == 0) {
             return $this->colors['perlino'];
+        }
+        
+        // With dun gen
+        if ($this->dun != 0) {
+            return $this->calculateBayDun();
         }
     }
     
     /**
      * @return  int
      */
-    public function calculateChestnut()
+    private function calculateChestnut()
     {
         // No cream
-        if ($this->cream == 0) {
+        if ($this->cream == 0 && $dun == 0) {
             return $this->colors['chestnut'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1) {
+        if ($this->cream == 1 && $dun == 0) {
             return $this->colors['palomino'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2) {
+        if ($this->cream == 2 && $dun == 0) {
             return $this->colors['cremello'];
+        }
+        
+        // With dun gen
+        if ($this->dun != 0) {
+            return $this->calculateChestnutDun();
+        }
+    }
+    
+    /**
+     * @return  int
+     */
+    private function calculateBlackDun()
+    {
+        // No cream
+        if ($this->cream == 0) {
+            return $this->colors['grulla'];
+        }
+        
+        // Heterozygous cream
+        if ($this->cream == 1) {
+            return $this->colors['smokyGrulla'];
+        }
+        
+        // Homozygous cream
+        if ($this->cream == 2) {
+            return $this->colors['smokyCreamGrulla'];
+        }
+    }
+    
+    /**
+     * @return  int
+     */
+    private function calculateBayDun()
+    {
+        // No cream
+        if ($this->cream == 0) {
+            return $this->colors['classicDun'];
+        }
+        
+        // Heterozygous cream
+        if ($this->cream == 1) {
+            return $this->colors['dunskin'];
+        }
+        
+        // Homozygous cream
+        if ($this->cream == 2) {
+            return $this->colors['dunPerlino'];
+        }
+    }
+    
+    /**
+     * @return  int
+     */
+    private function calculateChestnutDun()
+    {
+        // No cream
+        if ($this->cream == 0) {
+            return $this->colors['claybank'];
+        }
+        
+        // Heterozygous cream
+        if ($this->cream == 1) {
+            return $this->colors['dunalino'];
+        }
+        
+        // Homozygous cream
+        if ($this->cream == 2) {
+            return $this->colors['dunCremello'];
         }
     }
     
