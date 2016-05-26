@@ -2,6 +2,8 @@
 
 namespace Equidea\Engine\Service;
 
+use Equidea\Engine\Entity\Horse\CoatEntity;
+
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
  * @copyright   2016 Lisa Saalfrank
@@ -55,16 +57,14 @@ class BaseColorCalculator {
     ];
     
     /**
-     * @param   int $agouti
-     * @param   int $extension
-     * @param   int $cream
+     * @param   \Equidea\Engine\Entity\Horse\CoatEntity
      */
-    public function __construct($agouti, $extension, $cream, $dun)
+    public function __construct(CoatEntity $coat)
     {
-        $this->agouti = $agouti;
-        $this->extension = $extension;
-        $this->cream = $cream;
-        $this->dun = $dun;
+        $this->agouti = $coat->getAgouti();
+        $this->extension = $coat->getExtension();
+        $this->cream = $coat->getCream();
+        $this->dun = $coat->getDun();
     }
     
     /**
