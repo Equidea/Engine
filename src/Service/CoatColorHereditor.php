@@ -78,7 +78,7 @@ class CoatColorHereditor {
     {
         // Only heterozygous genes
         if ($father == 1 && $mother == 1) {
-            return $this->bothHeterozygous()
+            return $this->bothHeterozygous();
         }
         // With one homozygous gene
         return $this->oneHeterozygous($father, $mother);
