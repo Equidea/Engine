@@ -94,17 +94,17 @@ class BaseColorCalculator {
     private function calculateBlack()
     {
         // No cream
-        if ($this->cream == 0 && $dun == 0) {
+        if ($this->cream == 0 && $this->dun == 0) {
             return $this->colors['black'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1 && $dun == 0) {
+        if ($this->cream == 1 && $this->dun == 0) {
             return $this->colors['smokyBlack'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2 && $dun == 0) {
+        if ($this->cream == 2 && $this->dun == 0) {
             return $this->colors['smokyCream'];
         }
         
@@ -120,17 +120,17 @@ class BaseColorCalculator {
     private function calculateBay()
     {
         // No cream
-        if ($this->cream == 0 && $dun == 0) {
+        if ($this->cream == 0 && $this->dun == 0) {
             return $this->colors['bay'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1 && $dun == 0) {
+        if ($this->cream == 1 && $this->dun == 0) {
             return $this->colors['buckskin'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2 && $dun == 0) {
+        if ($this->cream == 2 && $this->dun == 0) {
             return $this->colors['perlino'];
         }
         
@@ -146,17 +146,17 @@ class BaseColorCalculator {
     private function calculateChestnut()
     {
         // No cream
-        if ($this->cream == 0 && $dun == 0) {
+        if ($this->cream == 0 && $this->dun == 0) {
             return $this->colors['chestnut'];
         }
         
         // Heterozygous cream
-        if ($this->cream == 1 && $dun == 0) {
+        if ($this->cream == 1 && $this->dun == 0) {
             return $this->colors['palomino'];
         }
         
         // Homozygous cream
-        if ($this->cream == 2 && $dun == 0) {
+        if ($this->cream == 2 && $this->dun == 0) {
             return $this->colors['cremello'];
         }
         
