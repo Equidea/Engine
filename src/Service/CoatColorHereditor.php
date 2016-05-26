@@ -103,7 +103,7 @@ class CoatColorHereditor {
     private function bothHeterozygous()
     {
         $random = mt_rand(0, 3);
-        $gen = ($random == 0) ? 1 : $random - 1;
+        $gene = ($random == 0) ? 1 : $random - 1;
         return $gene;
     }
     
