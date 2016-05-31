@@ -96,7 +96,7 @@ class CoatColorHereditor {
         $gene = ($random == 0) ? $father : $mother;
         return $gene;
     }
-     
+    
     /**
      * @return  int
      */
