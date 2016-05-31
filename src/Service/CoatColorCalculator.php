@@ -42,7 +42,7 @@ class CoatColorCalculator {
     }
     
     /**
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $mother
+     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $child
      *
      * @return  int
      */
