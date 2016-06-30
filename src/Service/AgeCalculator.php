@@ -70,11 +70,11 @@ class AgeCalculator {
     {
         // Calculate the age in years
         $restYears = $age % 48;
-        $years = ($age - $rest) / 48;
+        $years = ($age - $restYears) / 48;
         
         // Calculate the age in months
         $restMonths = $restYears % 4;
-        $moths = ($restYears - $restMonths) / 4;
+        $months = ($restYears - $restMonths) / 4;
         
         // Return a response array with the formated age
         return [
