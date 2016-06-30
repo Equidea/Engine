@@ -13,7 +13,7 @@ class AgeCalculator {
     /**
      * @var array
      */
-    $years = [
+    private $years = [
         'singular' => 'Jahr',
         'plural' => 'Jahre'
     ];
@@ -21,7 +21,7 @@ class AgeCalculator {
     /**
      * @var array
      */
-    $months = [
+    private $months = [
         'singular' => 'Monat',
         'plural' => 'Monate'
     ];
@@ -29,7 +29,7 @@ class AgeCalculator {
     /**
      * @var array
      */
-    $weeks = [
+    private $weeks = [
         'singular' => 'Woche',
         'plural' => 'Wochen'
     ];
