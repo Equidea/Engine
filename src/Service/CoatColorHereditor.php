@@ -35,6 +35,8 @@ class CoatColorHereditor {
     /**
      * @param   array   $mother
      * @param   array   $father
+     *
+     * @return  array
      */
     private function allGenes(array $mother, array $father)
     {
