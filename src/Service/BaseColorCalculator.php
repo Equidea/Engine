@@ -1,14 +1,14 @@
 <?php
 
-namespace Equidea\Engine\Service;
+namespace Equidea\Service;
 
-use Equidea\Engine\Entity\Horse\CoatEntity;
+use Equidea\Entity\Horse\CoatEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
  * @copyright   2016 Lisa Saalfrank
  * @license     MIT License http://opensource.org/licenses/MIT
- * @package     Equidea\Engine\Service
+ * @package     Equidea\Service
  */
 class BaseColorCalculator {
     
@@ -57,7 +57,7 @@ class BaseColorCalculator {
     ];
     
     /**
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity
+     * @param   \Equidea\Entity\Horse\CoatEntity
      */
     public function __construct(CoatEntity $coat)
     {

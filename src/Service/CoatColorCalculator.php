@@ -1,30 +1,40 @@
 <?php
 
-namespace Equidea\Engine\Service;
+namespace Equidea\Service;
 
-use Equidea\Engine\Entity\Horse\CoatEntity;
+use Equidea\Entity\Horse\CoatEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
  * @copyright   2016 Lisa Saalfrank
  * @license     MIT License http://opensource.org/licenses/MIT
- * @package     Equidea\Engine\Service
+ * @package     Equidea\Service
  */
 class CoatColorCalculator {
     
     /**
-     * @var \Equidea\Engine\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\Horse\CoatEntity
      */
     private $mother;
     
     /**
-     * @var \Equidea\Engine\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\Horse\CoatEntity
      */
     private $father;
     
     /**
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $mother
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $father
+     * @var \Equidea\Entity\Horse\CoatEntity
+     */
+    private $code;
+    
+    /**
+     * @var int
+     */
+    private $name;
+    
+    /**
+     * @param   \Equidea\Entity\Horse\CoatEntity $mother
+     * @param   \Equidea\Entity\Horse\CoatEntity $father
      */
     public function __construct(CoatEntity $mother, CoatEntity $father)
     {
@@ -33,33 +43,30 @@ class CoatColorCalculator {
     }
     
     /**
-     * @return  \Equidea\Engine\Entity\Horse\CoatEntity
+     * @return  void
      */
-    private function inherit()
+    private function calculate()
     {
+        // Calculate the foals genetical coat
         $hereditor = new CoatColorHereditor($this->mother, $this->father);
-        return $hereditor->calculate();
+        $this->code = $hereditor->calculate();
+        
+        // Calculate the color id matching the genetical code
+        $calculator = new BaseColorCalculator($this->code);
+        $this->name = $calculator->calculate();
     }
     
     /**
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $child
-     *
+     * @return  \Equidea\Entity\Horse\CoatEntity
+     */
+    public function getCode() {
+        return $this->code;
+    }
+    
+    /**
      * @return  int
      */
-    private function calculateColor(CoatEntity $child)
-    {
-        $calculator = new BaseColorCalculator($child);
-        return $calculator->calculate();
-    }
-    
-    /**
-     * @return  \Equidea\Engine\Entity\Horse\CoatEntity
-     */
-    public function calculate()
-    {
-        $child = $this->inherit();
-        $color = $this->calculateColor($child);
-        $child->setId($color);
-        return $child;
+    public function getName() {
+        return $this->name;
     }
 }

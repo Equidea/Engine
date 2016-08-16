@@ -1,19 +1,14 @@
 <?php
 
-namespace Equidea\Engine\Entity\Horse;
+namespace Equidea\Entity\Horse;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
  * @copyright   2016 Lisa Saalfrank
  * @license     MIT License http://opensource.org/licenses/MIT
- * @package     Equidea\Engine\Entity\Horse
+ * @package     Equidea\Entity\Horse
  */
 class CoatEntity {
-    
-    /**
-     * @var int
-     */
-    private $id;
     
     /**
      * @var int
@@ -36,19 +31,21 @@ class CoatEntity {
     private $dun = 0;
     
     /**
-     * @return  int
+     * @param   int $agouti
+     * @param   int $extension
+     * @param   int $cream
+     * @param   int $dun
      */
-    public function getId() {
-        return $this->id;
-    }
-    
-    /**
-     * @param   int $id
-     *
-     * @return  void
-     */
-    public function setId($id) {
-        $this->id = $id;
+    public function __construct(
+        $agouti = 0,
+        $extension = 0,
+        $cream = 0,
+        $dun = 0
+    ) {
+        $this->agouti = $agouti;
+        $this->extension = $extension;
+        $this->cream = $cream;
+        $this->dun = $dun;
     }
     
     /**
@@ -59,10 +56,28 @@ class CoatEntity {
     }
     
     /**
+     * @param   int $agouti
+     *
+     * @return  void
+     */
+    public function setAgouti($agouti) {
+        $this->agouti = $agouti;
+    }
+    
+    /**
      * @return  int
      */
     public function getExtension() {
         return $this->extension;
+    }
+    
+    /**
+     * @param   int $extension
+     *
+     * @return  void
+     */
+    public function setExtension($extension) {
+        $this->extension = $extension;
     }
     
     /**
@@ -73,6 +88,15 @@ class CoatEntity {
     }
     
     /**
+     * @param   int $cream
+     *
+     * @return  void
+     */
+    public function setCream($cream) {
+        $this->cream = $cream;
+    }
+    
+    /**
      * @return  int
      */
     public function getDun() {
@@ -80,9 +104,18 @@ class CoatEntity {
     }
     
     /**
+     * @param   int $dun
+     *
+     * @return  void
+     */
+    public function setDun($dun) {
+        $this->dun = $dun;
+    }
+    
+    /**
      * @return  array
      */
-    public function getAllGenes()
+    public function getAll()
     {
         return [
             'agouti' => $this->agouti,

@@ -1,30 +1,30 @@
 <?php
 
-namespace Equidea\Engine\Service;
+namespace Equidea\Service;
 
-use Equidea\Engine\Entity\Horse\CoatEntity;
+use Equidea\Entity\Horse\CoatEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
  * @copyright   2016 Lisa Saalfrank
  * @license     MIT License http://opensource.org/licenses/MIT
- * @package     Equidea\Engine\Service
+ * @package     Equidea\Service
  */
 class CoatColorHereditor {
     
     /**
-     * @var \Equidea\Engine\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\Horse\CoatEntity
      */
     private $mother;
     
     /**
-     * @var \Equidea\Engine\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\Horse\CoatEntity
      */
     private $father;
     
     /**
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $mother
-     * @param   \Equidea\Engine\Entity\Horse\CoatEntity $father
+     * @param   \Equidea\Entity\Horse\CoatEntity $mother
+     * @param   \Equidea\Entity\Horse\CoatEntity $father
      */
     public function __construct(CoatEntity $mother, CoatEntity $father)
     {
@@ -35,8 +35,6 @@ class CoatColorHereditor {
     /**
      * @param   array   $mother
      * @param   array   $father
-     *
-     * @return  array
      */
     private function allGenes(array $mother, array $father)
     {
@@ -110,13 +108,13 @@ class CoatColorHereditor {
     }
     
     /**
-     * @return  \Equidea\Engine\Entity\Horse\CoatEntity
+     * @return  \Equidea\Entity\Horse\CoatEntity
      */
     public function calculate()
     {
         // Get parent genes
-        $mother = $this->mother->getAllGenes();
-        $father = $this->father->getAllGenes();
+        $mother = $this->mother->getAll();
+        $father = $this->father->getAll();
         
         // Calculate the childs genes
         $heritance = $this->allGenes($mother, $father);
