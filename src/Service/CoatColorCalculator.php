@@ -45,7 +45,7 @@ class CoatColorCalculator {
     /**
      * @return  void
      */
-    private function calculate()
+    public function calculate()
     {
         // Calculate the foals genetical coat
         $hereditor = new CoatColorHereditor($this->mother, $this->father);
