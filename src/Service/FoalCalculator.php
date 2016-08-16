@@ -61,7 +61,7 @@ class FoalCalculator {
         // Set the age to one week
         $this->foal->setAge(1);
         // Set a random gender
-        $this->foal->setGender(mt_rand(1,3));
+        $this->foal->setGender(mt_rand(1,2));
         // Set the color name and color code
         $this->calculateColor();
         // Set the breed (same as fathers)
