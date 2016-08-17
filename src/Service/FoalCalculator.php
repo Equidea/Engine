@@ -56,20 +56,35 @@ class FoalCalculator {
     /**
      * @return  void
      */
+    private function setHeritage()
+    {
+        // Set the breed (same as fathers)
+        $this->foal->setBreed($this->father->getBreed());
+        // Set the horses mother
+        $this->foal->setMother($this->mother->getId());
+        // Set the horses father
+        $this->foal->setFather($this->father->getId());
+    }
+    
+    /**
+     * @return  void
+     */
     public function calculate()
     {
         // Set the age to one week
         $this->foal->setAge(1);
         // Set a random gender
         $this->foal->setGender(mt_rand(1,2));
+        // Set breed and parents
+        $this->setHeritage();
         // Set the color name and color code
         $this->calculateColor();
-        // Set the breed (same as fathers)
-        $this->foal->setBreed($this->father->getBreed());
     }
     
     /**
      * @param   string  $name
+     *
+     * @return  void
      */
     public function getFoal($name)
     {
