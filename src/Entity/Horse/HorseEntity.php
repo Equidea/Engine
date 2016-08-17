@@ -46,6 +46,16 @@ class HorseEntity {
     private $breed;
     
     /**
+     * @var int
+     */
+    private $mother;
+    
+    /**
+     * @var int
+     */
+    private $father;
+    
+    /**
      * @param   int $id
      */
     public function __construct($id) {
@@ -153,5 +163,37 @@ class HorseEntity {
      */
     public function setBreed($breed) {
         $this->breed = $breed;
+    }
+    
+    /**
+     * @return  int
+     */
+    public function getMother() {
+        return $this->mother;
+    }
+    
+    /**
+     * @param   int $mother
+     *
+     * @return  void
+     */
+    public function setMother($mother) {
+        $this->mother = $mother;
+    }
+    
+    /**
+     * @return  int
+     */
+    public function getFather() {
+        return $this->father;
+    }
+    
+    /**
+     * @param   int $father
+     *
+     * @return  void
+     */
+    public function setFather($father) {
+        $this->father = $father;
     }
 }
