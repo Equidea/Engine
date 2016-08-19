@@ -59,7 +59,7 @@ class HorseEntity {
      * @param   int $id
      */
     public function __construct($id) {
-        $this->id = $id;
+        $this->setId($id);
     }
     
     /**
@@ -67,6 +67,15 @@ class HorseEntity {
      */
     public function getId() {
         return $this->id;
+    }
+    
+    /**
+     * @param   int $id
+     *
+     * @return  void
+     */
+    public function setId($id) {
+        $this->id = $id;
     }
     
     /**
