@@ -84,9 +84,9 @@ class FoalCalculator {
     /**
      * @param   string  $name
      *
-     * @return  void
+     * @return  \Equidea\Entity\Horse\HorseEntity
      */
-    public function getFoal($name)
+    public function getFoal(string $name)
     {
         // Set the foals name
         $this->foal->setName($name);

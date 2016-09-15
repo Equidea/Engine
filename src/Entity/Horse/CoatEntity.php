@@ -37,10 +37,10 @@ class CoatEntity {
      * @param   int $dun
      */
     public function __construct(
-        $agouti = 0,
-        $extension = 0,
-        $cream = 0,
-        $dun = 0
+        int $agouti = 0,
+        int $extension = 0,
+        int $cream = 0,
+        int $dun = 0
     ) {
         $this->agouti = $agouti;
         $this->extension = $extension;
@@ -51,7 +51,7 @@ class CoatEntity {
     /**
      * @return  int
      */
-    public function getAgouti() {
+    public function getAgouti():int {
         return $this->agouti;
     }
     
@@ -60,14 +60,14 @@ class CoatEntity {
      *
      * @return  void
      */
-    public function setAgouti($agouti) {
+    public function setAgouti(int $agouti) {
         $this->agouti = $agouti;
     }
     
     /**
      * @return  int
      */
-    public function getExtension() {
+    public function getExtension():int {
         return $this->extension;
     }
     
@@ -76,14 +76,14 @@ class CoatEntity {
      *
      * @return  void
      */
-    public function setExtension($extension) {
+    public function setExtension(int $extension) {
         $this->extension = $extension;
     }
     
     /**
      * @return  int
      */
-    public function getCream() {
+    public function getCream():int {
         return $this->cream;
     }
     
@@ -92,14 +92,14 @@ class CoatEntity {
      *
      * @return  void
      */
-    public function setCream($cream) {
+    public function setCream(int $cream) {
         $this->cream = $cream;
     }
     
     /**
      * @return  int
      */
-    public function getDun() {
+    public function getDun():int {
         return $this->dun;
     }
     
@@ -108,14 +108,14 @@ class CoatEntity {
      *
      * @return  void
      */
-    public function setDun($dun) {
+    public function setDun(int $dun) {
         $this->dun = $dun;
     }
     
     /**
      * @return  array
      */
-    public function getAll()
+    public function getAll():array
     {
         return [
             'agouti' => $this->agouti,

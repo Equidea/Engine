@@ -58,14 +58,14 @@ class HorseEntity {
     /**
      * @param   int $id
      */
-    public function __construct($id) {
+    public function __construct(int $id) {
         $this->setId($id);
     }
     
     /**
      * @return  int
      */
-    public function getId() {
+    public function getId():int {
         return $this->id;
     }
     
@@ -74,14 +74,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setId($id) {
+    public function setId(int $id) {
         $this->id = $id;
     }
     
     /**
      * @return  string
      */
-    public function getName() {
+    public function getName():string {
         return $this->name;
     }
     
@@ -90,14 +90,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setName($name) {
+    public function setName(string $name) {
         $this->name = $name;
     }
     
     /**
      * @return  int
      */
-    public function getAge() {
+    public function getAge():int {
         return $this->age;
     }
     
@@ -106,14 +106,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setAge($age) {
+    public function setAge(int $age) {
         $this->age = $age;
     }
     
     /**
      * @return  int
      */
-    public function getGender() {
+    public function getGender():int {
         return $this->gender;
     }
     
@@ -122,14 +122,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setGender($gender) {
+    public function setGender(int $gender) {
         $this->gender = $gender;
     }
     
     /**
      * @return  int
      */
-    public function getColor() {
+    public function getColor():int {
         return $this->color;
     }
     
@@ -138,7 +138,7 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setColor($color) {
+    public function setColor(int $color) {
         $this->color = $color;
     }
     
@@ -154,14 +154,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setCoat($coat) {
+    public function setCoat(CoatEntity $coat) {
         $this->coat = $coat;
     }
     
     /**
      * @return  int
      */
-    public function getBreed() {
+    public function getBreed():int {
         return $this->breed;
     }
     
@@ -170,14 +170,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setBreed($breed) {
+    public function setBreed(int $breed) {
         $this->breed = $breed;
     }
     
     /**
      * @return  int
      */
-    public function getMother() {
+    public function getMother():int {
         return $this->mother;
     }
     
@@ -186,14 +186,14 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setMother($mother) {
+    public function setMother(int $mother) {
         $this->mother = $mother;
     }
     
     /**
      * @return  int
      */
-    public function getFather() {
+    public function getFather():int {
         return $this->father;
     }
     
@@ -202,7 +202,7 @@ class HorseEntity {
      *
      * @return  void
      */
-    public function setFather($father) {
+    public function setFather(int $father) {
         $this->father = $father;
     }
 }

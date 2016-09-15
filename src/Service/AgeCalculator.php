@@ -66,7 +66,7 @@ class AgeCalculator {
      *
      * @return  array
      */
-    public function formatAge($age)
+    public function formatAge(int $age):array
     {
         // Calculate the age in years
         $restYears = $age % 48;
@@ -89,7 +89,7 @@ class AgeCalculator {
      *
      * @return  array
      */
-    public function calculateAge($age)
+    public function calculateAge(int $age):array
     {
         // Format age from weeks to y-m-w
         $format = $this->formatAge($age);

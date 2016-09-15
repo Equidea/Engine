@@ -70,28 +70,28 @@ class BaseColorCalculator {
     /**
      * @return  boolean
      */
-    public function isBlack() {
+    public function isBlack():bool {
         return ($this->extension != 0 && $this->agouti == 0);
     }
     
     /**
      * @return  boolean
      */
-    public function isBay() {
+    public function isBay():bool {
         return ($this->extension != 0 && $this->agouti != 0);
     }
     
     /**
      * @return  boolean
      */
-    public function isChestnut() {
+    public function isChestnut():bool {
         return ($this->extension == 0);
     }
     
     /**
      * @return  int
      */
-    private function calculateBlack()
+    private function calculateBlack():int
     {
         // No cream
         if ($this->cream == 0 && $this->dun == 0) {
@@ -112,7 +112,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateBay()
+    private function calculateBay():int
     {
         // No cream
         if ($this->cream == 0 && $this->dun == 0) {
@@ -133,7 +133,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateChestnut()
+    private function calculateChestnut():int
     {
         // No cream
         if ($this->cream == 0 && $this->dun == 0) {
@@ -154,7 +154,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateBlackCream()
+    private function calculateBlackCream():int
     {
         // Heterozygous cream
         if ($this->cream == 1) {
@@ -170,7 +170,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateBayCream()
+    private function calculateBayCream():int
     {
         // Heterozygous cream
         if ($this->cream == 1) {
@@ -186,7 +186,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateChestnutCream()
+    private function calculateChestnutCream():int
     {
         // Heterozygous cream
         if ($this->cream == 1) {
@@ -202,7 +202,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateBlackDun()
+    private function calculateBlackDun():int
     {
         // No cream
         if ($this->cream == 0) {
@@ -223,7 +223,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateBayDun()
+    private function calculateBayDun():int
     {
         // No cream
         if ($this->cream == 0) {
@@ -244,7 +244,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    private function calculateChestnutDun()
+    private function calculateChestnutDun():int
     {
         // No cream
         if ($this->cream == 0) {
@@ -265,7 +265,7 @@ class BaseColorCalculator {
     /**
      * @return  int
      */
-    public function calculate()
+    public function calculate():int
     {
         // The black family
         if ($this->isBlack()) {

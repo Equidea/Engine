@@ -58,7 +58,7 @@ class CoatColorHereditor {
      *
      * @return  int
      */
-    private function singleGene($mother, $father)
+    private function singleGene(int $mother, int $father)
     {
         // With heterozygous gene 
         if ($father == 1 || $mother == 1) {
@@ -74,7 +74,7 @@ class CoatColorHereditor {
      *
      * @return  int
      */
-    private function heterozygous($mother, $father)
+    private function heterozygous(int $mother, int $father):int
     {
         // Only heterozygous genes
         if ($father == 1 && $mother == 1) {
@@ -90,7 +90,7 @@ class CoatColorHereditor {
      *
      * @return  int
      */
-    private function oneHeterozygous($mother, $father)
+    private function oneHeterozygous(int $mother, int $father):int
     {
         $random = mt_rand(0, 1);
         $gene = ($random == 0) ? $father : $mother;
@@ -100,7 +100,7 @@ class CoatColorHereditor {
     /**
      * @return  int
      */
-    private function bothHeterozygous()
+    private function bothHeterozygous():int
     {
         $random = mt_rand(0, 3);
         $gene = ($random == 0) ? 1 : $random - 1;
