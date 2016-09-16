@@ -45,7 +45,10 @@ class FoalCalculator {
      */
     private function calculateColor()
     {
-        $calculator = new CoatColorCalculator($this->mother, $this->father);
+        $calculator = new CoatColorCalculator(
+            $this->mother->getCoat(),
+            $this->father->getCoat()
+        );
         
         // Set the color name
         $this->foal->setColor($calculator->getName());
