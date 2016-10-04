@@ -45,10 +45,13 @@ class FoalCalculator {
      */
     private function calculateColor()
     {
-        $calculator = new CoatColorCalculator(
-            $this->mother->getCoat(),
-            $this->father->getCoat()
-        );
+        // The parents color genetics
+        $motherCoat = $this->mother->getCoat();
+        $fatherCoat = $this->father->getCoat();
+        
+        // Calculate the foal color genetics
+        $calculator = new CoatColorCalculator($motherCoat, $fatherCoat);
+        $calculator->calculate();
         
         // Set the color name
         $this->foal->setColor($calculator->getName());
@@ -67,6 +70,8 @@ class FoalCalculator {
         $this->foal->setMother($this->mother->getId());
         // Set the horses father
         $this->foal->setFather($this->father->getId());
+        // Set the horses breeder
+        $this->foal->setBreeder($this->mother->getOwner());
     }
     
     /**
@@ -82,6 +87,8 @@ class FoalCalculator {
         $this->setHeritage();
         // Set the color name and color code
         $this->calculateColor();
+        // Set the horses owner (same as mother)
+        $this->foal->setOwner($this->mother->getOwner());
     }
     
     /**

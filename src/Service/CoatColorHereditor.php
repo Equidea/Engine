@@ -35,8 +35,10 @@ class CoatColorHereditor {
     /**
      * @param   array   $mother
      * @param   array   $father
+     *
+     * @return  array
      */
-    private function allGenes(array $mother, array $father)
+    private function allGenes(array $mother, array $father):array
     {
         // Get all gene locus
         $genes = array_keys($mother);
@@ -58,7 +60,7 @@ class CoatColorHereditor {
      *
      * @return  int
      */
-    private function singleGene(int $mother, int $father)
+    private function singleGene(int $mother, int $father):int
     {
         // With heterozygous gene 
         if ($father == 1 || $mother == 1) {

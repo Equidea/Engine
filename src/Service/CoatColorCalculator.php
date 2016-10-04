@@ -66,7 +66,7 @@ class CoatColorCalculator {
     /**
      * @return  int
      */
-    public function getName():int {
+    public function getName() {
         return $this->name;
     }
 }

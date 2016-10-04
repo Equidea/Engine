@@ -26,26 +26,18 @@ class CoatEntity {
     private $cream = 0;
     
     /**
-     * @var int
-     */
-    private $dun = 0;
-    
-    /**
      * @param   int $agouti
      * @param   int $extension
      * @param   int $cream
-     * @param   int $dun
      */
     public function __construct(
         int $agouti = 0,
         int $extension = 0,
-        int $cream = 0,
-        int $dun = 0
+        int $cream = 0
     ) {
         $this->agouti = $agouti;
         $this->extension = $extension;
         $this->cream = $cream;
-        $this->dun = $dun;
     }
     
     /**
@@ -97,22 +89,6 @@ class CoatEntity {
     }
     
     /**
-     * @return  int
-     */
-    public function getDun():int {
-        return $this->dun;
-    }
-    
-    /**
-     * @param   int $dun
-     *
-     * @return  void
-     */
-    public function setDun(int $dun) {
-        $this->dun = $dun;
-    }
-    
-    /**
      * @return  array
      */
     public function getAll():array
@@ -120,8 +96,7 @@ class CoatEntity {
         return [
             'agouti' => $this->agouti,
             'extension' => $this->extension,
-            'cream' => $this->cream,
-            'dun' => $this->dun,
+            'cream' => $this->cream
         ];
     }
     
@@ -135,6 +110,5 @@ class CoatEntity {
         $this->agouti = $genes['agouti'];
         $this->extension = $genes['extension'];
         $this->cream = $genes['cream'];
-        $this->dun = $genes['dun'];
     }
 }

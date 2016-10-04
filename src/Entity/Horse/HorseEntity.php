@@ -56,6 +56,16 @@ class HorseEntity {
     private $father;
     
     /**
+     * @var int
+     */
+    private $owner;
+    
+    /**
+     * @var int
+     */
+    private $breeder;
+    
+    /**
      * @param   int $id
      */
     public function __construct(int $id) {
@@ -204,5 +214,37 @@ class HorseEntity {
      */
     public function setFather(int $father) {
         $this->father = $father;
+    }
+    
+    /**
+     * @return  int
+     */
+    public function getOwner():int {
+        return $this->owner;
+    }
+    
+    /**
+     * @param   int $owner
+     *
+     * @return  void
+     */
+    public function setOwner(int $owner) {
+        $this->owner = $owner;
+    }
+    
+    /**
+     * @return  int
+     */
+    public function getBreeder():int {
+        return $this->breeder;
+    }
+    
+    /**
+     * @param   int $breeder
+     *
+     * @return  void
+     */
+    public function setBreeder(int $breeder) {
+        $this->breeder = $breeder;
     }
 }
