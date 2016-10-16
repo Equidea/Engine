@@ -2,7 +2,7 @@
 
 namespace Equidea\Service;
 
-use Equidea\Entity\Horse\CoatEntity;
+use Equidea\Entity\CoatEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
@@ -13,17 +13,17 @@ use Equidea\Entity\Horse\CoatEntity;
 class CoatColorCalculator {
     
     /**
-     * @var \Equidea\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\CoatEntity
      */
     private $mother;
     
     /**
-     * @var \Equidea\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\CoatEntity
      */
     private $father;
     
     /**
-     * @var \Equidea\Entity\Horse\CoatEntity
+     * @var \Equidea\Entity\CoatEntity
      */
     private $code;
     
@@ -33,8 +33,8 @@ class CoatColorCalculator {
     private $name;
     
     /**
-     * @param   \Equidea\Entity\Horse\CoatEntity $mother
-     * @param   \Equidea\Entity\Horse\CoatEntity $father
+     * @param   \Equidea\Entity\CoatEntity  $mother
+     * @param   \Equidea\Entity\CoatEntity  $father
      */
     public function __construct(CoatEntity $mother, CoatEntity $father)
     {
@@ -57,7 +57,7 @@ class CoatColorCalculator {
     }
     
     /**
-     * @return  \Equidea\Entity\Horse\CoatEntity
+     * @return  \Equidea\Entity\CoatEntity
      */
     public function getCode() {
         return $this->code;

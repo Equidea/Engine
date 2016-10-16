@@ -2,7 +2,7 @@
 
 namespace Equidea\Service;
 
-use Equidea\Entity\Horse\CoatEntity;
+use Equidea\Entity\CoatEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
@@ -43,7 +43,7 @@ class BaseColorCalculator {
     ];
     
     /**
-     * @param   \Equidea\Entity\Horse\CoatEntity
+     * @param   \Equidea\Entity\CoatEntity
      */
     public function __construct(CoatEntity $coat)
     {

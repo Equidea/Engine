@@ -2,7 +2,7 @@
 
 namespace Equidea\Service;
 
-use Equidea\Entity\Horse\HorseEntity;
+use Equidea\Entity\HorseEntity;
 
 /**
  * @author      Lisa Saalfrank <lisa.saalfrank@web.de>
@@ -13,23 +13,23 @@ use Equidea\Entity\Horse\HorseEntity;
 class FoalCalculator {
 
     /**
-     * @var \Equidea\Entity\Horse\HorseEntity
+     * @var \Equidea\Entity\HorseEntity
      */
     private $mother;
     
     /**
-     * @var \Equidea\Entity\Horse\HorseEntity
+     * @var \Equidea\Entity\HorseEntity
      */
     private $father;
     
     /**
-     * @var \Equidea\Entity\Horse\HorseEntity
+     * @var \Equidea\Entity\HorseEntity
      */
     private $foal;
     
     /**
-     * @param   \Equidea\Entity\Horse\HorseEntity   $mother
-     * @param   \Equidea\Entity\Horse\HorseEntity   $father
+     * @param   \Equidea\Entity\HorseEntity     $mother
+     * @param   \Equidea\Entity\HorseEntity     $father
      */
     public function __construct(HorseEntity $mother, HorseEntity $father)
     {
@@ -94,7 +94,7 @@ class FoalCalculator {
     /**
      * @param   string  $name
      *
-     * @return  \Equidea\Entity\Horse\HorseEntity
+     * @return  \Equidea\Entity\HorseEntity
      */
     public function getFoal(string $name)
     {
