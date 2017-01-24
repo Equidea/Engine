@@ -8,6 +8,3 @@
 **DE** Fellfarbrechner für die Gene Agouti, Extension, Grey, Cream, Silver und Dun. Um die helleren und dunkleren Schattierungen von Braun, Rappe und Fuchs abzubilden, gibt es ein zusätzliches, nicht in der Realität vorkommendes Gen "Shading".
 
 ![Image of Coat Colors](http://www.bilder-upload.eu/upload/c394b5-1484993800.png)
- **EN** From left to right: Black Chestnut, Liver Chestnut, Chestnut, Sandy Chestnut, Seal Brown, Dark Bay, Bay, Light Bay, Black, Jet Black
- 
- **DE** Von links nach rechts: Kohlfuchs, Dunkelfuchs, Fuchs, Hellfuchs, Schwarzbraun, Dunkelbraun, Braun, Hellbraun, Kohlrappe, Rappe
